@@ -1,0 +1,10 @@
+# Use official Solana Docker image (has validator pre-installed)
+# Updated to v1.18.26 to match build-env and ensure compatibility
+FROM solanalabs/solana:v1.18.26
+
+# Expose validator ports
+EXPOSE 8899 8900 9900
+
+# Run validator with reset
+CMD ["solana-test-validator", "--reset", "--quiet"]
+

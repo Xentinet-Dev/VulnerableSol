@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Test/audit files
+*-audit.ts
+*-audit.json
+*-audit.md
+*audit*.ts
+*audit*.json
+*audit*.md
+platform-audit.ts
+comprehensive-platform-audit.ts
+end-to-end-audit.ts
+
+# Audit reports
+COMPREHENSIVE_AUDIT_REPORT.json
+E2E_AUDIT_REPORT.json
+PLATFORM_AUDIT_REPORT.json
+FULL_PLATFORM_AUDIT_REPORT.md
+*_AUDIT_REPORT.*
+*_AUDIT.*
+
+# Setup/utility scripts
+*.ps1
+*.sh
+
+# Documentation (keep only README.md)
+*.md
+!README.md
+
+# Test programs and data
+test-programs/
+test-ledger/
+.scan-temp/
+
+# Logs
+*.log
+*.log.*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.backup
+*.json.bak

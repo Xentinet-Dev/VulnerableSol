@@ -1,0 +1,48 @@
+services:
+  solana-validator:
+    build:
+      context: .
+      dockerfile: Dockerfile.validator
+    container_name: solana-test-validator
+    ports:
+      - "8899:8899"
+      - "8900:8900"
+      - "9900:9900"
+    command: solana-test-validator --reset --quiet
+    networks:
+      - solana-network
+    volumes:
+      - ./test-ledger:/test-ledger
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8899"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  build-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: anchor-build-env
+    volumes:
+      - .:/workspace
+      - cargo-cache:/root/.cargo/registry
+      - cargo-git-cache:/root/.cargo/git
+      - cargo-build-cache:/root/.cargo/target
+    working_dir: /workspace
+    networks:
+      - solana-network
+    environment:
+      - SOLANA_URL=http://solana-validator:8899
+      - ANCHOR_VERSION=0.29.0
+    command: tail -f /dev/null  # Keep container running
+
+networks:
+  solana-network:
+    driver: bridge
+
+volumes:
+  cargo-cache:
+  cargo-git-cache:
+  cargo-build-cache:
+
