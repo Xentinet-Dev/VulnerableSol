@@ -4,10 +4,10 @@ A comprehensive security scanning tool for smart contracts that supports multipl
 
 ## Features
 
-- 🔍 **Contract Address Scanning**: Analyze on-chain contracts (Solana & EVM)
-- 📦 **Git Repository Analysis**: Clone and scan entire repositories
-- 🌐 **Website URL Scanning**: Extract contracts and repos from websites
-- 🛡️ **Multi-Vulnerability Detection**: 
+-  **Contract Address Scanning**: Analyze on-chain contracts (Solana & EVM)
+-  **Git Repository Analysis**: Clone and scan entire repositories
+-  **Website URL Scanning**: Extract contracts and repos from websites
+-  **Multi-Vulnerability Detection**: 
   - Solana account lifecycle vulnerabilities
   - Reentrancy attacks
   - Weak oracle implementations
@@ -84,11 +84,11 @@ npm run scan git <REPO_URL> -l 5 --compact -o results.json
 ## Output Format
 
 Results are displayed in the console with color-coded severity levels:
-- 🔴 **CRITICAL**: Immediate security risk
-- 🟣 **HIGH**: Significant security concern
-- 🟡 **MEDIUM**: Moderate security issue
-- 🔵 **LOW**: Minor security concern
-- ⚪ **INFO**: Informational findings
+-  **CRITICAL**: Immediate security risk
+-  **HIGH**: Significant security concern
+-  **MEDIUM**: Moderate security issue
+-  **LOW**: Minor security concern
+-  **INFO**: Informational findings
 
 **Default Behavior:**
 - Shows first 20 vulnerabilities (sorted by severity)
